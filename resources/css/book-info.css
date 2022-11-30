@@ -1,0 +1,13 @@
+h1{
+    font-weight: bold;
+}
+
+/* info list CSS */
+.info .list ul{
+    list-style: none;
+}
+
+.info .list ul li{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+}

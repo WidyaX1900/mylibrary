@@ -1,0 +1,11 @@
+/* add button CSS */
+.add-button button span{
+    position: relative;
+    top: 4px;
+    right: 0;
+}
+
+/* table CSS */
+.rent-table table{
+    text-align: center;
+}

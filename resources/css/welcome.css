@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --secondaryFont: 'Roboto', sans-serif;
+}
+
+/* Hero Section CSS */
+header{
+    background-image: url('http://localhost/mylibrary/public/storage/img/hero.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+header .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.618);
+}
+
+header .overlay .hero-desc{
+    width: 50%;
+}
+
+header .overlay h1{
+    color: rgb(250, 250, 250);
+    font-weight: bolder;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+header .overlay button{
+    font-family: var(--secondaryFont);
+    font-size: 18px;
+    width: 12em;
+    height: 3em;
+}
+
+/* Our library CSS */
+.our-section{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.our-section h3{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.our-section .features{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.our-section .features figure{
+    width: 300px;
+    height: 300px;
+}
+
+.our-section .features figure img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.our-section .features .features-desc{
+    width: 92%;
+}
+
+.our-section .features .features-desc h5{
+    text-align: center;
+    font-weight: bold;
+}
+
+.our-section .features .features-desc p{
+    font-family: var(--secondaryFont);
+    font-weight: 500;
+}
+
+/* All books CSS */
+.all-books{
+    width: 30%;
+    
+}
+
+/* Visi dan Misi CSS */
+.vision{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.vision h3{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.vision .picture{
+    width: 50%;
+}
+
+.vision .picture img{
+    width: 100%;
+    border-radius: 4px;
+}
+
+.vision .description{
+    width: 50%;
+}
+
+.vision .description p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+}
+
+/* Footer CSS */
+footer{
+    width: 100%;
+    background-color: #0C1726;
+    color: rgb(242, 242, 242);
+}
+
+footer .copyright{
+    width: 30%;
+    height: 80px;
+}
+
+footer .created-by{
+    width: 30%;
+    height: 80px;
+}
+
+footer .created-by p, footer .copyright p{
+    font-size: 1.3rem;
+}
+
+
+
+
+
