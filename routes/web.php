@@ -48,3 +48,4 @@ Route::delete('/book/destroy', [BookController::class, 'destroy']);
 
 // Book Rental Routes
 Route::get('/rental', [BookRentController::class, 'index']);
+Route::get('/rental/create', [BookRentController::class, 'create']);

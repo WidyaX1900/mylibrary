@@ -91,4 +91,5 @@
 <script src="http://localhost/mylibrary/resources/js/info-button.js"></script>
 <script src="http://localhost/mylibrary/resources/js/edit-button.js"></script>
 <script src="http://localhost/mylibrary/resources/js/delete-button.js"></script>
+<script src="http://localhost/mylibrary/resources/js/add-rental.js"></script>
 </html>

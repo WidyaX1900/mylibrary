@@ -4,7 +4,7 @@
 @section('content')
     <div class="container mt-4">
         <h1>Rental Report</h1>
-        <div class="col-lg-4 add-button">
+        <div class="col-lg-4 add-rental">
             <button type="button" class="btn btn-primary p-3 mt-3">
                 <span class="material-symbols-outlined">
                     add
