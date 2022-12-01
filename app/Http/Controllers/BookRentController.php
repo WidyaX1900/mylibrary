@@ -31,12 +31,18 @@ class BookRentController extends Controller
     }
 
     public function store(RentalRequest $request)
-    {
+    {   
+        $book = Book::findOrFail($request->book_id);
+        
         $rental = Book_Rent::create([
             'book_id' => $request->book_id,
             'user_id' => $request->user_id,
             'rent_date' => $request->rent_date,
             'return_date' => $request->return_date
+        ]);
+
+        $book->update([
+            'status' => 0
         ]);
 
         if($rental){
