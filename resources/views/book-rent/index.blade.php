@@ -30,27 +30,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>I Putu Gde Rangga W.S.</td>
-                        <td>Perahu Kertas</td>
-                        <td>2022-12-01</td>
-                        <td>2022-12-08</td>
-                        <td>
-                            <button type="button" class="btn btn-sm btn-warning">
-                                <span class="material-symbols-outlined">
-                                    edit
-                                </span>
-                                Edit
-                            </button>
-                            <button type="button" class="btn btn-sm btn-danger">
-                                <span class="material-symbols-outlined">
-                                    delete
-                                </span>
-                                Hapus
-                            </button>
-                        </td>
-                    </tr>
+                    @foreach ($rental as $data)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $data->user->name }}</td>
+                            <td>{{ $data->book->title }}</td>
+                            <td>{{ $data->rent_date }}</td>
+                            <td>{{ $data->return_date }}</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-warning">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                    Edit
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                    Hapus
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

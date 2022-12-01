@@ -13,8 +13,9 @@ class BookRentController extends Controller
 {
     public function index()
     {
-        
-        return view('book-rent.index');   
+        $rental = Book_Rent::with(['book', 'user'])->get();
+      
+        return view('book-rent.index', ['rental' => $rental]);   
     }
 
     public function create()
