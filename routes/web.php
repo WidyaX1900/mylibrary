@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,7 @@ Route::get('/home', function(){
     return view('home');
 });
 
+// Book Routes
 Route::get('/book', [BookController::class, 'index']);
 Route::get('/book/create', [BookController::class, 'create']);
 Route::post('/book/store', [BookController::class, 'store']);
@@ -43,3 +45,6 @@ Route::get('/book/edit/{book}', [BookController::class, 'edit']);
 Route::put('/book/update/{book}', [BookController::class, 'update']);
 Route::post('/book/delete', [BookController::class, 'delete']);
 Route::delete('/book/destroy', [BookController::class, 'destroy']);
+
+// Book Rental Routes
+Route::get('/book-rent', [BookRentController::class, 'index']);
