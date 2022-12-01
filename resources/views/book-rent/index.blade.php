@@ -22,8 +22,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Book Title</th>
                         <th>Borrower's name</th>
+                        <th>Borrowed Book</th>
                         <th>Rental Date</th>
                         <th>Return Date</th>
                         <th>Action</th>
@@ -32,10 +32,10 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Motivasi Pengusaha</td>
-                        <td>Siti Marunah</td>
-                        <td>10/17/2022</td>
-                        <td>10/24/2022</td>
+                        <td>I Putu Gde Rangga W.S.</td>
+                        <td>Perahu Kertas</td>
+                        <td>2022-12-01</td>
+                        <td>2022-12-08</td>
                         <td>
                             <button type="button" class="btn btn-sm btn-warning">
                                 <span class="material-symbols-outlined">
