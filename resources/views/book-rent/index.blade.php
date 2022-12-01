@@ -1,5 +1,5 @@
 @extends('templates.main')
-@section('header', 'Book Rental')
+@section('header', 'Rental')
 @section('style', 'rental')
 @section('content')
     <div class="container mt-4">
