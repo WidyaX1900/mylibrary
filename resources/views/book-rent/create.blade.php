@@ -4,8 +4,17 @@
 @section('content')
     <div class="container mt-4">
         <h1>Tambah Data Peminjaman</h1>
+        @if ($errors->any())        
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="forms col-lg-8 mt-3 border p-3 rounded">
-            <form action="/book/store" method="post">
+            <form action="/rental/store" method="post">
                 @csrf
                 <div class="mb-3">
                     <label for="book_id">Book Title</label>

@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Http\Requests\RentalRequest;
 
 class BookRentController extends Controller
 {
@@ -26,5 +27,10 @@ class BookRentController extends Controller
             'books' => $books,
             'rent_date' => $rent_date
         ]);   
+    }
+
+    public function store(RentalRequest $request)
+    {
+        
     }
 }
