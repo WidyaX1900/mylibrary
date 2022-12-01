@@ -5,7 +5,8 @@
     <div class="container mt-4">
         <h1>Tambah Data Peminjaman</h1>
         <div class="forms col-lg-8 mt-3 border p-3 rounded">
-            <form action="" method="">
+            <form action="/book/store" method="post">
+                @csrf
                 <div class="mb-3">
                     <label for="book_id">Book Title</label>
                     <select class="form-select" id="book_id" name="book_id">
