@@ -59,6 +59,8 @@ class BookRentController extends Controller
 
     public function edit(Book_Rent $rental)
     {
+        $rental = $rental->with(['user', 'book']);
+        
         return view('book-rent.edit', ['rental' => $rental]);   
     }
 }
