@@ -19,7 +19,7 @@ class BookRentController extends Controller
     public function create()
     {
         $visitors = User::where('role_id', '3')->get(['id', 'name']);
-        $books = Book::get(['id', 'title']);
+        $books = Book::where('status', 1)->get(['id', 'title']);
         $rent_date = Carbon::now()->toDateString();
 
         return view('book-rent.create', 
