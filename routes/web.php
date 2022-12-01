@@ -50,3 +50,4 @@ Route::delete('/book/destroy', [BookController::class, 'destroy']);
 Route::get('/rental', [BookRentController::class, 'index']);
 Route::get('/rental/create', [BookRentController::class, 'create']);
 Route::post('/rental/store', [BookRentController::class, 'store']);
+Route::get('/rental/edit/{rental}', [BookRentController::class, 'edit']);

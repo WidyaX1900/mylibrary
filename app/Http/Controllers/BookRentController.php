@@ -56,4 +56,9 @@ class BookRentController extends Controller
 
         return redirect('/rental');
     }
+
+    public function edit(Book_Rent $rental)
+    {
+        return view('book-rent.edit', ['rental' => $rental]);   
+    }
 }
