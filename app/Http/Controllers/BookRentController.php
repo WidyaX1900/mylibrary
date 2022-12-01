@@ -13,6 +13,7 @@ class BookRentController extends Controller
 {
     public function index()
     {
+        
         return view('book-rent.index');   
     }
 
