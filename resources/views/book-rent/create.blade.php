@@ -25,8 +25,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="visitors_id">Borrower's name</label>
-                    <select class="form-select" id="visitors_id" name="visitors_id">
+                    <label for="user_id">Borrower's name</label>
+                    <select class="form-select" id="user_id" name="user_id">
                         @foreach ($visitors as $visitor)
                             <option value="{{ $visitor->id }}">{{ $visitor->name }}</option>
                         @endforeach
@@ -34,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="rent_date">Tanggal Peminjaman</label>
-                    <input type="date" class="form-control" id="rent_date" name="rent_date" value="{{ $rent_date }}" disabled>
+                    <input type="date" class="form-control" id="rent_date" name="rent_date" value="{{ $rent_date }}" readonly>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="return_date">Tanggal Dikembalikan</label>

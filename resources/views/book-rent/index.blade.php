@@ -3,6 +3,11 @@
 @section('style', 'rental')
 @section('content')
     <div class="container mt-4">
+        @if (session()->has('status'))
+            <div class="alert alert-{{ session()->get('status') }}">
+                <strong>{{ session()->get('result') }}</strong> {{ session()->get('action') }}
+            </div>
+        @endif
         <h1>Rental Report</h1>
         <div class="col-lg-4 add-rental">
             <button type="button" class="btn btn-primary p-3 mt-3">
