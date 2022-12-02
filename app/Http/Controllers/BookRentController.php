@@ -62,9 +62,45 @@ class BookRentController extends Controller
         $rental = Book_Rent::with(['user', 'book'])
             ->findOrFail($id);
 
-        $book = Book::where('id', '!=', $rental->book->id)
+        $book = Book::where('status', 1)
             ->get(['id', 'title']);
 
         return view('book-rent.edit', ['rental' => $rental, 'book' => $book]);   
+    }
+
+    public function update(Request $request, $id)
+    {
+        $rental = Book_Rent::with(['user', 'book'])
+            ->findOrFail($id);
+
+        $newBook = Book::findOrFail($request->book_id);
+        $borrowedBook = Book::findOrFail($rental->book->id);
+
+        $rental->update([
+            'book_id' => $request->book_id,
+            'rent_date' => $request->rent_date,
+            'return_date' => $request->return_date
+        ]);
+        
+        // Check if user choose a new book
+        if($newBook->id !== $borrowedBook->id){
+
+            $newBook->update([
+                'status' => 0
+            ]);
+
+            $borrowedBook->update([
+                'status' => 1
+            ]);
+        }
+
+        if($rental){
+
+            session()->flash('status', 'success');
+            session()->flash('result', 'Successfully');
+            session()->flash('action', 'Update rental data');
+        }
+
+        return redirect('/rental');
     }
 }

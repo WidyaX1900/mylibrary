@@ -14,13 +14,13 @@
             </div>
         @endif
         <div class="forms col-lg-8 mt-3 border p-3 rounded">
-            <form action="" method="post">
+            <form action="/rental/update/{{ $rental->id }}" method="post">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
                     <label for="book_id">Book Title</label>
                     <select class="form-select" id="book_id" name="book_id">
-                        <option value="">{{ $rental->book->title }}</option>
+                        <option value="{{ $rental->book->id }}">{{ $rental->book->title }}</option>
                         @foreach ($book as $books)
                             <option value="{{ $books->id }}">{{ $books->title }}</option>
                         @endforeach
@@ -29,7 +29,7 @@
                 <div class="mb-3">
                     <label for="user_id">Borrower's name</label>
                     <select class="form-select" id="user_id" name="user_id" disabled>
-                        <option value="">{{ $rental->user->name }}</option>
+                        <option value="{{ $rental->user->id }}">{{ $rental->user->name }}</option>
                     </select>
                 </div>
                 <div class="mb-3">
