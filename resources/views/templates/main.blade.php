@@ -93,4 +93,5 @@
 <script src="http://localhost/mylibrary/resources/js/delete-button.js"></script>
 <script src="http://localhost/mylibrary/resources/js/add-rental.js"></script>
 <script src="http://localhost/mylibrary/resources/js/edit-rental.js"></script>
+<script src="http://localhost/mylibrary/resources/js/delete-rental.js"></script>
 </html>

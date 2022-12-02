@@ -11,10 +11,10 @@ use App\Models\Book_Rent;
 
 class BookRentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $rental = Book_Rent::with(['book', 'user'])->get();
-      
+    
         return view('book-rent.index', ['rental' => $rental]);   
     }
 
@@ -99,6 +99,33 @@ class BookRentController extends Controller
             session()->flash('status', 'success');
             session()->flash('result', 'Successfully');
             session()->flash('action', 'Update rental data');
+        }
+
+        return redirect('/rental');
+    }
+
+    public function delete(Request $request)
+    {
+        $rental = Book_Rent::findOrFail($request->id);
+        echo json_encode($rental);   
+    }
+
+    public function destroy(Request $request)
+    {
+        $rental = Book_Rent::findOrFail($request->id);
+        $book = Book::findOrFail($rental->book_id);
+        
+        $book->update([
+            'status' => 1
+        ]);
+
+        $rental->delete();
+
+        if($rental){
+
+            session()->flash('status', 'success');
+            session()->flash('result', 'Successfully');
+            session()->flash('action', 'Delete rental data');
         }
 
         return redirect('/rental');
