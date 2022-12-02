@@ -57,10 +57,14 @@ class BookRentController extends Controller
         return redirect('/rental');
     }
 
-    public function edit(Book_Rent $rental)
-    {
-        $rental = $rental->with(['user', 'book']);
-        
-        return view('book-rent.edit', ['rental' => $rental]);   
+    public function edit($id)
+    {   
+        $rental = Book_Rent::with(['user', 'book'])
+            ->findOrFail($id);
+
+        $book = Book::where('id', '!=', $rental->book->id)
+            ->get(['id', 'title']);
+
+        return view('book-rent.edit', ['rental' => $rental, 'book' => $book]);   
     }
 }

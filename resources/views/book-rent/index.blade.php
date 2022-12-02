@@ -38,13 +38,13 @@
                             <td>{{ $data->rent_date }}</td>
                             <td>{{ $data->return_date }}</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-warning">
+                                <button type="button" class="btn btn-sm btn-warning edit-rental" data-id="{{ $data->id }}">
                                     <span class="material-symbols-outlined">
                                         edit
                                     </span>
                                     Edit
                                 </button>
-                                <button type="button" class="btn btn-sm btn-danger">
+                                <button type="button" class="btn btn-sm btn-danger delete-rental" data-id="{{ $data->id }}">
                                     <span class="material-symbols-outlined">
                                         delete
                                     </span>
