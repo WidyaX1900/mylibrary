@@ -20,8 +20,8 @@
         <div class="col-lg-6">
             <form action="" method="get">
                 <div class="input-group mb-3 mt-4">
-                    <input type="text" class="form-control" placeholder="Search Rental Data">
-                    <button class="btn btn-primary">
+                    <input type="text" class="form-control" placeholder="Search Rental Data" id="keyword">
+                    <button class="btn btn-primary search-rental" type="button">
                        <span class="material-symbols-outlined">
                             search
                         </span> 

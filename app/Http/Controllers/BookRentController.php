@@ -11,7 +11,7 @@ use App\Models\Book_Rent;
 
 class BookRentController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $rental = Book_Rent::with(['book', 'user'])->get();
     
