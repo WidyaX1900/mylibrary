@@ -14,7 +14,7 @@
                 <h3>Book Total</h3>
             </div>
             <div class="values">
-                <h2>75</h2>
+                <h2>{{ $books }}</h2>
                 <p>books</p>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <h3>Available</h3>
             </div>
             <div class="values">
-                <h2>50</h2>
+                <h2>{{ $available }}</h2>
                 <p>books</p>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <h3>Borrowed</h3>
             </div>
             <div class="values">
-                <h2>25</h2>
+                <h2>{{ $borrowed }}</h2>
                 <p>books</p>
             </div>
         </div>
