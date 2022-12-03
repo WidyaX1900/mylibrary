@@ -18,19 +18,12 @@
             </button>
         </div>
         <div class="col-lg-6">
-            <form action="" method="get">
-                <div class="input-group mb-3 mt-4">
-                    <input type="text" class="form-control" placeholder="Search Rental Data" id="keyword">
-                    <button class="btn btn-primary search-rental" type="button">
-                       <span class="material-symbols-outlined">
-                            search
-                        </span> 
-                    </button>
-                </div>
-            </form>
+            <div class="input-group mb-3 mt-4">
+                <input type="text" class="form-control" placeholder="Search Rental Data" id="keyword" autocomplete="off">
+            </div>
         </div>
         <div class="col-lg-12 mt-4 rent-table">
-            <table class="table border rounded">
+            <table class="table border rounded" id="rental-table">
                 <thead>
                     <tr>
                         <th>No</th>
