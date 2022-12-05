@@ -30,6 +30,11 @@
                     <input type="password" class="form-control" id="password" name="password">
                     <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
                 </div>
+                <div class="mb-3">
+                    @if (Route::has('password.request'))
+                        <a href="{{ route('password.request') }}">Forgot Password</a>                        
+                    @endif
+                </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="remember" name="remember">
                     <label class="form-check-label" for="remember">Remember me</label>
