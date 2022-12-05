@@ -20,7 +20,7 @@
             </header>
             <form action="" method="">
                 <div class="mb-3">
-                    <label for="email" class="form-label">email</label>
+                    <label for="email" class="form-label">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" autocomplete="off">
                 </div>
                 <div class="mb-3">
