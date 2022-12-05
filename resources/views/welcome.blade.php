@@ -33,7 +33,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Log In</a>
+              <a class="nav-link" aria-current="page" href="/login">Log In</a>
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-primary">Register</button>
