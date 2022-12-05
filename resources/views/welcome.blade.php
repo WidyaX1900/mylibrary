@@ -165,5 +165,7 @@
           </div>
       </footer>
       <!-- End Footer -->
+
+      <script src="http://localhost/mylibrary/resources/js/register-button.js"></script>
   </body>
 </html>
