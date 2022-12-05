@@ -23,9 +23,12 @@
             </button>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-outline-primary">
-                        Logout
-                    </button>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-primary">
+                            Logout
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>
