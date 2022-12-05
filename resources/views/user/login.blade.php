@@ -18,7 +18,8 @@
             <header class="mt-2 mb-4">
                 <h4>E-library Login</h4>
             </header>
-            <form action="" method="">
+            <form action="{{ route('login') }}" method="post">
+                @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" autocomplete="off">
