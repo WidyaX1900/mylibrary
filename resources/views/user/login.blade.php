@@ -23,10 +23,12 @@
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" autocomplete="off">
+                    <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password">
+                    <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="remember" name="remember">
