@@ -34,7 +34,7 @@
                     <label class="form-label" for="confirm">Confirm Password</label>
                     <input type="password" class="form-control" id="confirm" name="confirm" />
                 </div>
-                <button type="submit" class="btn btn-primary">Kirim</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </form>
         </div>
     </div>
