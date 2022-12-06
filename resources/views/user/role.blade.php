@@ -25,7 +25,7 @@
                         <h5>Member</h5>
                     </div>
                 </div>
-                <div class="role-box shadow">
+                <div class="role-box shadow" id="visitor">
                     <figure class="m-auto">
                         <img src="{{ asset('storage/img/visitor-illustration.png') }}" alt="visitors illustration">
                     </figure>
