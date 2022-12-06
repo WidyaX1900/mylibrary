@@ -33,11 +33,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/home', [HomeController::class, 'index']);
-
 // Authentication Routes
 Route::middleware(['auth', 'verified'])->group(function(){
     // Book Routes
+    Route::get('/home', [HomeController::class, 'index']);
     Route::get('/book', [BookController::class, 'index']);
     Route::get('/book/create', [BookController::class, 'create']);
     Route::post('/book/store', [BookController::class, 'store']);
