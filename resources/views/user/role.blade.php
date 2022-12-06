@@ -38,4 +38,5 @@
     </div>
 </body>
 <script src="http://localhost/mylibrary/resources/js/role-select.js"></script>
+<script src="http://localhost/mylibrary/resources/js/visitor-account.js"></script>
 </html>

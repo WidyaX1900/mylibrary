@@ -68,6 +68,7 @@ Route::middleware('guest')->group(function(){
     });
 
     Route::get('/visitor/create', [VisitorRegisteredController::class, 'create']);
+    Route::post('/visitor/store', [VisitorRegisteredController::class, 'store']);
 
 });
 
