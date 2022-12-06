@@ -61,5 +61,5 @@ Route::middleware(['auth', 'verified'])->group(function() {
 Route::get('/role', function() {
     return view('user.role');
 
-});
+})->middleware('guest');
 
