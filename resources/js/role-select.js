@@ -6,10 +6,4 @@ $(function(){
 
     });
 
-    $('#visitor').on('click', function(){
-
-        
-
-    });
-
 });

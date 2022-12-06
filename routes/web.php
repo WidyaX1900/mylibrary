@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\VisitorRegisteredController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\HomeController;
@@ -58,8 +59,15 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::delete('/rental/destroy', [BookRentController::class, 'destroy']);
 });
 
-Route::get('/role', function() {
-    return view('user.role');
+// Guest Route
+Route::middleware('guest')->group(function(){
 
-})->middleware('guest');
+    Route::get('/role', function() {
+        return view('user.role');
+    
+    });
+
+    Route::get('/visitor/create', [VisitorRegisteredController::class, 'create']);
+
+});
 
