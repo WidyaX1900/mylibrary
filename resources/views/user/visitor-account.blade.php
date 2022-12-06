@@ -13,7 +13,7 @@
     <div class="container mt-5">
         <h1>Create Account</h1>
         <div class="col-lg-7 border p-3 rounded mt-3 forms">
-            <form action="" method="post">
+            <form action="/visitor/store" method="post">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
