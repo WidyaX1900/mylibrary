@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ asset('storage/img/logo.png') }}">
     <link rel="stylesheet" href="http://localhost/mylibrary/resources/css/bootstrap.css">
     <link rel="stylesheet" href="http://localhost/mylibrary/resources/css/role.css">
+    <script src="http://localhost/mylibrary/resources/js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
     <div class="container vh-100 box">
@@ -16,7 +17,7 @@
                 <h2>What do you want to be?</h2>
             </header>
             <div class="role-class m-auto d-flex justify-content-between mt-4">
-                <div class="role-box shadow">
+                <div class="role-box shadow" id="member">
                     <figure class="m-auto">
                         <img src="{{ asset('storage//img/member-illustration.png') }}" alt="member illustration">
                     </figure>
@@ -36,4 +37,5 @@
         </section>
     </div>
 </body>
+<script src="http://localhost/mylibrary/resources/js/role-select.js"></script>
 </html>
