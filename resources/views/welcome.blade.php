@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ asset('storage/img/logo.png') }}">
     <link rel="stylesheet" href="http://localhost/mylibrary/resources/css/bootstrap.css">
     <link rel="stylesheet" href="http://localhost/mylibrary/resources/css/welcome.css" />
+    <script src="http://localhost/mylibrary/resources/js/jquery-3.6.1.min.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -36,7 +37,7 @@
               <a class="nav-link" aria-current="page" href="/login">Log In</a>
             </li>
             <li class="nav-item">
-              <button type="button" class="btn btn-primary">Register</button>
+              <button type="button" class="btn btn-primary" id="register-button">Register</button>
             </li>
           </ul>
         </div>
@@ -165,7 +166,6 @@
           </div>
       </footer>
       <!-- End Footer -->
-
-      <script src="http://localhost/mylibrary/resources/js/register-button.js"></script>
   </body>
+  <script src="http://localhost/mylibrary/resources/js/register.js"></script>
 </html>

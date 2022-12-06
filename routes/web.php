@@ -34,9 +34,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // Authentication Routes
-Route::middleware(['auth', 'verified'])->group(function(){
-    // Book Routes
+Route::middleware(['auth', 'verified'])->group(function() {
+    // Home Route
     Route::get('/home', [HomeController::class, 'index']);
+
+    // Book Routes
     Route::get('/book', [BookController::class, 'index']);
     Route::get('/book/create', [BookController::class, 'create']);
     Route::post('/book/store', [BookController::class, 'store']);
@@ -54,5 +56,10 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::put('/rental/update/{rental}', [BookRentController::class, 'update']);
     Route::post('/rental/delete', [BookRentController::class, 'delete']);
     Route::delete('/rental/destroy', [BookRentController::class, 'destroy']);
+});
+
+Route::get('/role', function() {
+    return view('user.role');
+
 });
 

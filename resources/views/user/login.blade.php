@@ -42,7 +42,7 @@
                 <button type="submit" class="btn btn-primary p-2">Login</button>
             </form>
             <div class="col-lg-10 mt-4 m-auto">
-                Not have an account? <a href="">Register Here</a>
+                Not have an account? <a href="/role">Register Here</a>
             </div>
         </section>
     </div>
