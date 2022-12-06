@@ -35,21 +35,25 @@ require __DIR__.'/auth.php';
 
 Route::get('/home', [HomeController::class, 'index']);
 
-// Book Routes
-Route::get('/book', [BookController::class, 'index'])->middleware('auth');
-Route::get('/book/create', [BookController::class, 'create'])->middleware('auth');
-Route::post('/book/store', [BookController::class, 'store'])->middleware('auth');
-Route::get('/book/show/{book}', [BookController::class, 'show'])->middleware('auth');
-Route::get('/book/edit/{book}', [BookController::class, 'edit'])->middleware('auth');
-Route::put('/book/update/{book}', [BookController::class, 'update'])->middleware('auth');
-Route::post('/book/delete', [BookController::class, 'delete'])->middleware('auth');
-Route::delete('/book/destroy', [BookController::class, 'destroy'])->middleware('auth');
+// Authentication Routes
+Route::middleware(['auth', 'verified'])->group(function(){
+    // Book Routes
+    Route::get('/book', [BookController::class, 'index']);
+    Route::get('/book/create', [BookController::class, 'create']);
+    Route::post('/book/store', [BookController::class, 'store']);
+    Route::get('/book/show/{book}', [BookController::class, 'show']);
+    Route::get('/book/edit/{book}', [BookController::class, 'edit']);
+    Route::put('/book/update/{book}', [BookController::class, 'update']);
+    Route::post('/book/delete', [BookController::class, 'delete']);
+    Route::delete('/book/destroy', [BookController::class, 'destroy']);
+    
+    // Book Rental Routes
+    Route::get('/rental', [BookRentController::class, 'index']);
+    Route::get('/rental/create', [BookRentController::class, 'create']);
+    Route::post('/rental/store', [BookRentController::class, 'store']);
+    Route::get('/rental/edit/{rental}', [BookRentController::class, 'edit']);
+    Route::put('/rental/update/{rental}', [BookRentController::class, 'update']);
+    Route::post('/rental/delete', [BookRentController::class, 'delete']);
+    Route::delete('/rental/destroy', [BookRentController::class, 'destroy']);
+});
 
-// Book Rental Routes
-Route::get('/rental', [BookRentController::class, 'index'])->middleware('auth');
-Route::get('/rental/create', [BookRentController::class, 'create'])->middleware('auth');
-Route::post('/rental/store', [BookRentController::class, 'store'])->middleware('auth');
-Route::get('/rental/edit/{rental}', [BookRentController::class, 'edit'])->middleware('auth');
-Route::put('/rental/update/{rental}', [BookRentController::class, 'update'])->middleware('auth');
-Route::post('/rental/delete', [BookRentController::class, 'delete'])->middleware('auth');
-Route::delete('/rental/destroy', [BookRentController::class, 'destroy'])->middleware('auth');
