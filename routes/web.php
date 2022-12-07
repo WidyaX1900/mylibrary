@@ -59,6 +59,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index']);
     Route::get('/feedback/create', [FeedbackController::class, 'create']);
     Route::post('/feedback/store', [FeedbackController::class, 'store']);
+    Route::get('/feedback/show/{feedback}', [FeedbackController::class, 'show']);
 });
 
 // Guest Route

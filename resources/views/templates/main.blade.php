@@ -98,4 +98,5 @@
 <script src="http://localhost/mylibrary/resources/js/edit-rental.js"></script>
 <script src="http://localhost/mylibrary/resources/js/delete-rental.js"></script>
 <script src="http://localhost/mylibrary/resources/js/search-rental.js"></script>
+<script src="http://localhost/mylibrary/resources/js/feedback-detail.js"></script>
 </html>

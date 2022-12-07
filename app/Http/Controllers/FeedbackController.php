@@ -10,7 +10,7 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        $feedbacks = Feedback::all();
+        $feedbacks = Feedback::with('user')->get();
         
         return view('feedback.index', ['feedbacks' => $feedbacks]);   
     }
@@ -39,5 +39,12 @@ class FeedbackController extends Controller
         }
 
         return redirect('/feedback/create');
+    }
+
+    public function show($id)
+    {
+        $feedback = Feedback::with('user')->findOrFail($id);
+
+        return view('feedback.show', ['feedback' => $feedback]);   
     }
 }
