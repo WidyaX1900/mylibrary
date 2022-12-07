@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\VisitorRegisteredController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookRentController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,11 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::put('/rental/update/{rental}', [BookRentController::class, 'update']);
     Route::post('/rental/delete', [BookRentController::class, 'delete']);
     Route::delete('/rental/destroy', [BookRentController::class, 'destroy']);
+
+    // Feedback Routes
+    Route::get('/feedback', [FeedbackController::class, 'index']);
+    Route::get('/feedback/create', [FeedbackController::class, 'create']);
+    Route::post('/feedback/store', [FeedbackController::class, 'store']);
 });
 
 // Guest Route
