@@ -18,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -65,6 +61,10 @@ Route::middleware('guest')->group(function(){
     Route::get('/role', function() {
         return view('user.role');
     
+    });
+
+    Route::get('/', function () {
+        return view('welcome');
     });
 
     Route::get('/visitor/create', [VisitorRegisteredController::class, 'create']);
