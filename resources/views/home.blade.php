@@ -3,7 +3,7 @@
 @section('style', 'admin-content')
 @section('content')
     <div class="container mt-5">
-        <h1>Hello, Rangga</h1>
+        <h1>Hello, {{ Auth::user()->name }}</h1>
     </div>
     <div class="row data-container">
         <div class="col-lg-4 box shadow">
