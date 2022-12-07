@@ -49,7 +49,7 @@
       <div class="overlay d-flex justify-content-center align-items-center">
         <div class="hero-desc d-flex flex-column justify-content-center">
           <h1>Welcome to My Library</h1>
-          <button type="button" class="btn btn-primary m-auto mt-3">
+          <button type="button" class="btn btn-primary m-auto mt-3 explore-button">
             Explore Library
           </button>
         </div>
@@ -137,7 +137,7 @@
           </div>
         </div>
         <div class="all-books row m-auto mt-3">
-            <button type="button" class="btn btn-outline-primary" id="button">
+            <button type="button" class="btn btn-outline-primary explore-button" id="button">
               <strong>See all books</strong>
             </button>
         </div>
@@ -168,4 +168,5 @@
       <!-- End Footer -->
   </body>
   <script src="http://localhost/mylibrary/resources/js/register.js"></script>
+  <script src="http://localhost/mylibrary/resources/js/explore-button.js"></script>
 </html>
