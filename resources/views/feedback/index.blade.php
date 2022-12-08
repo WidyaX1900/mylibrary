@@ -4,6 +4,11 @@
 @section('content')
     <div class="container mt-4">
         <h1>Visitor's Feedback</h1>
+        @if (session()->has('status'))
+            <div class="alert alert-success">
+                <strong>{{ session()->get('result') }}</strong> {{ session()->get('action') }}
+            </div>
+        @endif
         @foreach ($feedbacks as $feedback)
             <div class="inbox mt-3 row">
                 <div class="col-lg-1">
@@ -22,7 +27,7 @@
                         <p>Publish date: {{ $feedback->created_at }}</p>
                     </div>
                     <div class="buttons d-flex flex-row-reverse">
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger delete-feedback" data-id="{{ $feedback->id }}">
                             <span class="material-symbols-outlined">
                                 delete
                             </span>

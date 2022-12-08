@@ -47,4 +47,32 @@ class FeedbackController extends Controller
 
         return view('feedback.show', ['feedback' => $feedback]);   
     }
+
+    public function personalFeedback()
+    {
+        $feedbacks = Feedback::where('user_id', Auth::user()->id)
+            ->orderBy('id', 'desc')
+            ->get(['message', 'created_at']);
+
+        return view('feedback.personal', ['feedbacks' => $feedbacks]);   
+    }
+
+    public function delete(Feedback $feedback)
+    {
+        return view('feedback.delete', ['feedback' => $feedback]);
+    }
+
+    public function destroy(Feedback $feedback)
+    {
+        $feedback->delete();
+        
+        if($feedback){
+
+            session()->flash('status', 'success');
+            session()->flash('result', 'Successfully');
+            session()->flash('action', 'delete feedback');
+        }
+
+        return redirect('/feedback');
+    }
 }

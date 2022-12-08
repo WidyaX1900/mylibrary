@@ -60,6 +60,9 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/feedback/create', [FeedbackController::class, 'create']);
     Route::post('/feedback/store', [FeedbackController::class, 'store']);
     Route::get('/feedback/show/{feedback}', [FeedbackController::class, 'show']);
+    Route::get('/feedback/personal', [FeedbackController::class, 'personalFeedback']);
+    Route::get('/feedback/delete/{feedback}', [FeedbackController::class, 'delete']);
+    Route::delete('/feedback/destroy/{feedback}', [FeedbackController::class, 'destroy']);
 });
 
 // Guest Route
