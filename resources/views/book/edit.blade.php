@@ -34,18 +34,6 @@
                     <input type="date" class="form-control" id="release_date" name="release_date" value="{{ $book->release_date }}">
                 </div>
                 <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select class="form-select" aria-label="Default select example" name="status" id="status">
-                        @if ($book->status > 0)
-                            <option value="1" selected>Available</option>
-                            <option value="0">Borrowed</option>
-                        @else
-                            <option value="1">Available</option>
-                            <option value="0" selected>Borrowed</option>
-                        @endif
-                      </select>
-                </div>
-                <div class="mb-3">
                     <label for="cover" class="form-label">Cover File</label>
                     <input type="file" class="form-control" id="cover" name="cover">
                 </div>

@@ -90,8 +90,7 @@ class BookController extends Controller
             'author' => $request->author,
             'publisher' => $request->publisher,
             'release_date' => $request->release_date,
-            'cover' => $fileName,
-            'status' => $request->status 
+            'cover' => $fileName, 
         ]);
 
         if($book){
