@@ -31,7 +31,9 @@
                         <th>Borrowed Book</th>
                         <th>Rental Date</th>
                         <th>Return Date</th>
-                        <th>Action</th>
+                        @if (Auth::user()->role_id === 1)
+                            <th>Action</th>                            
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -42,23 +44,25 @@
                             <td>{{ $data->book->title }}</td>
                             <td>{{ $data->rent_date }}</td>
                             <td>{{ $data->return_date }}</td>
-                            <td>
-                                <button type="button" class="btn btn-sm btn-warning edit-rental"
-                                    data-id="{{ $data->id }}">
-                                    <span class="material-symbols-outlined">
-                                        edit
-                                    </span>
-                                    Edit
-                                </button>
-                                <button type="button" class="btn btn-sm btn-danger delete-rental"
-                                    data-id="{{ $data->id }}" data-bs-toggle="modal"
-                                    data-bs-target="#deleteRentalModal">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                    Hapus
-                                </button>
-                            </td>
+                            @if (Auth::user()->role_id === 1)
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-warning edit-rental"
+                                        data-id="{{ $data->id }}">
+                                        <span class="material-symbols-outlined">
+                                            edit
+                                        </span>
+                                        Edit
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger delete-rental"
+                                        data-id="{{ $data->id }}" data-bs-toggle="modal"
+                                        data-bs-target="#deleteRentalModal">
+                                        <span class="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                        Hapus
+                                    </button>
+                                </td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>

@@ -59,18 +59,27 @@
                     </span>
                     <a href="/book">Books</a>
                 </li>
-                <li class="mt-4">
-                    <span class="material-symbols-outlined">
-                        av_timer
-                    </span>
-                    <a href="/rental">Rental Data</a>
-                </li>
-                <li class="mt-4">
-                    <span class="material-symbols-outlined">
-                        chat_bubble
-                    </span>
-                    <a href="/feedback">Feedback</a>
-                </li>
+                @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+                    <li class="mt-4">
+                        <span class="material-symbols-outlined">
+                            av_timer
+                        </span>
+                        <a href="/rental">Rental Data</a>
+                    </li>                    
+                    <li class="mt-4">
+                        <span class="material-symbols-outlined">
+                            chat_bubble
+                        </span>
+                        <a href="/feedback">Feedback</a>
+                    </li>
+                @else
+                    <li class="mt-4">
+                        <span class="material-symbols-outlined">
+                            chat_bubble
+                        </span>
+                        <a href="/feedback/personal">My feedbacks</a>
+                    </li>
+                @endif
             </ul>
             <button type="button" class="close-button">
                 X

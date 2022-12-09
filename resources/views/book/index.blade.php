@@ -11,10 +11,12 @@
         @endif
         <h1>Daftar Buku</h1>
         <div class="add-button mt-3">
-            <button type="button" class="btn btn-primary p-3">
-                <span class="material-symbols-outlined"> add </span>
-                Tambah Buku
-            </button>
+            @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+                <button type="button" class="btn btn-primary p-3">
+                    <span class="material-symbols-outlined"> add </span>
+                    Tambah Buku
+                </button>
+            @endif
         </div>
         <div class="col-lg-7 mt-4">
             <form action="/book" method="get">
@@ -46,18 +48,20 @@
                         </button>
                     </div>
                     <div class="edit-delete mt-3">
-                        <button type="button" class="btn btn-warning edit-button" data-id="{{ $book->id }}">
-                            <span class="material-symbols-outlined">
-                                edit
-                            </span>
-                            <strong>Edit</strong>
-                        </button>
-                        <button type="button" class="btn btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $book->id }}">
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                            <strong>Hapus</strong>
-                        </button>
+                        @if (Auth::user()->role_id === 1)
+                            <button type="button" class="btn btn-warning edit-button" data-id="{{ $book->id }}">
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                                <strong>Edit</strong>
+                            </button>
+                            <button type="button" class="btn btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $book->id }}">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                                <strong>Hapus</strong>
+                            </button>
+                        @endif
                     </div>
                 </div>
             @endforeach

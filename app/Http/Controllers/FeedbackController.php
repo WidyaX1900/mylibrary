@@ -10,7 +10,9 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        $feedbacks = Feedback::with('user')->get();
+        $feedbacks = Feedback::with('user')
+            ->orderBy('id', 'desc')
+            ->get();
         
         return view('feedback.index', ['feedbacks' => $feedbacks]);   
     }

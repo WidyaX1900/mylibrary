@@ -27,12 +27,14 @@
                         <p>Publish date: {{ $feedback->created_at }}</p>
                     </div>
                     <div class="buttons d-flex flex-row-reverse">
-                        <button type="button" class="btn btn-danger delete-feedback" data-id="{{ $feedback->id }}">
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                            Hapus
-                        </button>
+                        @if (Auth::user()->role_id === 1)
+                            <button type="button" class="btn btn-danger delete-feedback" data-id="{{ $feedback->id }}">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                                Hapus
+                            </button>                            
+                        @endif
                         <button type="button" class="btn btn-warning feedback-detail" data-id="{{ $feedback->id }}">
                             <span class="material-symbols-outlined">
                                 visibility

@@ -38,31 +38,32 @@ Route::middleware(['auth', 'verified'])->group(function() {
 
     // Book Routes
     Route::get('/book', [BookController::class, 'index']);
-    Route::get('/book/create', [BookController::class, 'create']);
-    Route::post('/book/store', [BookController::class, 'store']);
+    Route::get('/book/create', [BookController::class, 'create'])->middleware('admin-member');
+    Route::post('/book/store', [BookController::class, 'store'])->middleware('admin-member');
     Route::get('/book/show/{book}', [BookController::class, 'show']);
-    Route::get('/book/edit/{book}', [BookController::class, 'edit']);
-    Route::put('/book/update/{book}', [BookController::class, 'update']);
-    Route::post('/book/delete', [BookController::class, 'delete']);
-    Route::delete('/book/destroy', [BookController::class, 'destroy']);
+    Route::get('/book/edit/{book}', [BookController::class, 'edit'])
+    ->middleware('admin-only');
+    Route::put('/book/update/{book}', [BookController::class, 'update'])->middleware('admin-only');
+    Route::post('/book/delete', [BookController::class, 'delete'])->middleware('admin-only');
+    Route::delete('/book/destroy', [BookController::class, 'destroy'])->middleware('admin-only');
     
     // Book Rental Routes
-    Route::get('/rental', [BookRentController::class, 'index']);
-    Route::get('/rental/create', [BookRentController::class, 'create']);
-    Route::post('/rental/store', [BookRentController::class, 'store']);
-    Route::get('/rental/edit/{rental}', [BookRentController::class, 'edit']);
-    Route::put('/rental/update/{rental}', [BookRentController::class, 'update']);
-    Route::post('/rental/delete', [BookRentController::class, 'delete']);
-    Route::delete('/rental/destroy', [BookRentController::class, 'destroy']);
+    Route::get('/rental', [BookRentController::class, 'index'])->middleware('admin-member');
+    Route::get('/rental/create', [BookRentController::class, 'create'])->middleware('admin-member');
+    Route::post('/rental/store', [BookRentController::class, 'store'])->middleware('admin-member');
+    Route::get('/rental/edit/{rental}', [BookRentController::class, 'edit'])->middleware('admin-only');
+    Route::put('/rental/update/{rental}', [BookRentController::class, 'update'])->middleware('admin-only');
+    Route::post('/rental/delete', [BookRentController::class, 'delete'])->middleware('admin-only');
+    Route::delete('/rental/destroy', [BookRentController::class, 'destroy'])->middleware('admin-only');
 
     // Feedback Routes
-    Route::get('/feedback', [FeedbackController::class, 'index']);
-    Route::get('/feedback/create', [FeedbackController::class, 'create']);
-    Route::post('/feedback/store', [FeedbackController::class, 'store']);
-    Route::get('/feedback/show/{feedback}', [FeedbackController::class, 'show']);
-    Route::get('/feedback/personal', [FeedbackController::class, 'personalFeedback']);
-    Route::get('/feedback/delete/{feedback}', [FeedbackController::class, 'delete']);
-    Route::delete('/feedback/destroy/{feedback}', [FeedbackController::class, 'destroy']);
+    Route::get('/feedback', [FeedbackController::class, 'index'])->middleware('admin-member');
+    Route::get('/feedback/create', [FeedbackController::class, 'create'])->middleware('visitor-only');
+    Route::post('/feedback/store', [FeedbackController::class, 'store'])->middleware('visitor-only');
+    Route::get('/feedback/show/{feedback}', [FeedbackController::class, 'show'])->middleware('admin-member');
+    Route::get('/feedback/personal', [FeedbackController::class, 'personalFeedback'])->middleware('visitor-only');
+    Route::get('/feedback/delete/{feedback}', [FeedbackController::class, 'delete'])->middleware('admin-only');
+    Route::delete('/feedback/destroy/{feedback}', [FeedbackController::class, 'destroy'])->middleware('admin-only');
 });
 
 // Guest Route
