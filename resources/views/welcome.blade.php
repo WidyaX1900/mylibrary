@@ -104,34 +104,34 @@
         <div class="features row mt-3">
           <div class="col-lg-4">
             <figure>
-              <img src="{{ asset('storage/img/dmc-cover2.jpg') }}" alt="dmc cover" />
+              <img src="{{ asset('storage/img/samurai.jpg') }}" alt="book 1 cover" />
             </figure>
             <div class="features-desc">
-              <h5>Devil May Cry</h5>
+              <h5>Filosofi Samurai</h5>
               <p>
-                Story about son of demon save the world
+                Learn how samurai think and apply it to your life
               </p>
             </div>
           </div>
           <div class="col-lg-4">
             <figure>
-              <img src="{{ asset('storage/img/onepiece-cover.jpg') }}" alt="one piece cover" />
+              <img src="{{ asset('storage/img/perahu.jpg') }}" alt="book 2 cover" />
             </figure>
             <div class="features-desc">
-              <h5>One Piece</h5>
+              <h5>Perahu Kertas</h5>
               <p>
-                Help Monkey D. Luffy to become a king of the pirates.
+                Famous novel from Indonesia, Perahu Kertas
               </p>
             </div>
           </div>
           <div class="col-lg-4">
             <figure>
-              <img src="{{ asset('storage/img/naruto-cover.jpg') }}" alt="naruto cover" />
+              <img src="{{ asset('storage/img/pengusaha.jpg') }}" alt="book 3 cover" />
             </figure>
             <div class="features-desc">
-              <h5>Naruto</h5>
+              <h5>Berani Jadi Pengusaha</h5>
               <p>
-                Naruto's journey to become a ninja and hokage to protect the ninja world.
+                Learn the mindsets of the success entrepreneur.
               </p>
             </div>
           </div>
